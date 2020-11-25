@@ -131,3 +131,22 @@ The problem with this method is generating too many temporary objects over and o
 
 ### Adapter (with caching)
 Caches temporary objects so that creation only happens once.
+
+## Bridge
+Connecting components together through abstractions.
+
+**Motivation**
+* Bridge prevents a 'Cartesian product' complexity explosion
+* Example:
+    * Base class ThreadScheduler
+    * Can be preemptive or coorperative
+    * Can run on Windows or Unix
+    * End up with a 2x2 scenario: WindowsPTS, UnixPTS, WindowsCTS, UnixCTS
+* Bride patterns avoid the entity explosion
+
+![Before Bridge](img/bridge-before.png?raw=true "Before applying Bridge pattern")
+
+![After Bridge](img/bridge-after.png?raw=true "After applying Bridge pattern")
+
+### Bridge
+A mechanism that decouples an interface (hierarchy) from an implementation (hierarchy).
